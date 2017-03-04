@@ -75,5 +75,4 @@ window.onload=function(){
         banTabLis[i].onmouseout=function(){hide($("#banTabBox"));clearTimeout(banTabLis.timer);}
     }
     goFLoor($("#main"),$("#floorNavUl"),20);
-
 }

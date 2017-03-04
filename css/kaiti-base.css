@@ -57,6 +57,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     /*top:50%;*/
     top:100px;
     cursor: pointer;
+    z-index:10;
 }
 .sideNav a{
     display: block;
