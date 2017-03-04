@@ -1,0 +1,317 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }
+/*  去掉图片底侧默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {  content:"";  display:table;  }
+.clearfix:after{clear:both;}
+.clearfix{  *zoom:1;/*IE/7/6*/  }
+a {color:#666; text-decoration:none; }
+/*a:hover{color:#C81623;}*/
+a:hover{color:#A49175;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #A49175!important;}
+
+/*公共类*/
+.w {  width: 960px;margin:0 auto;  }
+.fl {  float:left  }
+.fr {  float:right  }
+.al {  text-align:left  }
+.ac {  text-align:center  }
+.ar {  text-align:right  }
+.hide {  display:none  }
+
+/*悬浮sideAd*/
+.sideAd{
+    position: absolute;
+    left: 10px;
+    top:200px;
+    width: 100px;
+    height: 115px;
+    display: none;
+}
+.sideAd img{
+    position: relative;
+    width: 100px;
+    height: 115px;
+}
+/*悬浮sideNav*/
+.sideNav{
+    width: 50px;
+    height: 200px;
+    position: fixed;
+    right: 10px;
+    /*top:50%;*/
+    top:100px;
+    cursor: pointer;
+}
+.sideNav a{
+    display: block;
+    width: 50px;
+    height: 18px;
+    border: 1px solid #6C3D36;
+    margin-top: 1px;
+    font: 16px/18px "黑体","宋体" ;
+    background-color: rgba(0,0,0,.5);
+    /*background-color: #000;*/
+    /*opacity: 0.5;*/
+    filter: alpha(opacity=50);
+    color:#ccc ;
+    text-align: center;
+    z-index: 100;
+}
+.sideNav a:hover,
+.gotop a:hover{
+    background-color: #6C3D36;
+    color: #fff;
+    border: 3px solid #fff;
+}
+.gotop a{
+    width:50px;
+    height: 50px;
+    border-radius: 25px;
+    font: 700 32px/50px "黑体","宋体" ;
+}
+.sideUp a,
+.sideDown a{
+    width: 50px;
+    height: 36px;
+    border-radius: 12px;
+    font: 700 24px/36px "黑体","宋体" ;
+}
+
+/*开头广告*/
+.topAd{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #A49175;
+    color: #eee;
+    font:  50px/100px "微软雅黑","宋体" ;
+    text-align: center;
+}
+.topAd .w{
+    position: relative;
+}
+.closeCon{
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .3);
+    color: #fff;
+    cursor: pointer;
+    top:10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    font:20px/20px "宋体","黑体";
+}
+#topAd_close{
+    /*top:10px;*/
+    /*right: 10px;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*font:20px/20px "宋体","黑体";*/
+}
+
+/*导航栏*/
+.nav{
+    width: 100%;
+    background-color: #A49175;
+    height: 42px;
+    font: 16px/42px "微软雅黑","宋体" ;
+    color: #ccc;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.nav a{
+    color: #ccc;
+}
+.nav a:hover{
+    color: #fff;
+}
+.nav-search{
+    padding-top: 5px;
+}
+.nav-search input{
+    float: left;
+    width: 300px;
+    height: 32px;
+    margin-left: 100px;
+    background: #eee;
+    color:#666;
+    text-indent: 2em;
+}
+.nav-search button{
+    float: left;
+    width: 50px;
+    height: 32px;
+    background: #fff;
+    font: 16px/32px "微软雅黑","宋体" ;
+}
+.nav-r li{
+    float: left;
+}
+.nav .line{
+    width: 1px;
+    height: 42px;
+    background: #aaa;
+    margin:0 10px ;
+}
+#navQRcode{
+    position: relative;
+}
+#navQRcode img{
+    width: 100px;
+    position: absolute;
+    left: -10px;
+    display: none;
+    z-index: 10;
+}
+
+/*header部分*/
+.header{
+    height: 60px;
+    background-color: #ccc;
+    position: relative;
+    font:  24px/60px "微软雅黑","宋体" ;
+    text-align: center;
+}
+
+#line1{
+    border-top: 3px solid #A49175;
+}
+
+/*banner部分*/
+.banner{
+    height: 550px;
+    margin-top: 20px;
+    position: relative;
+}
+.banTabBox{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 300px;
+    width: 280px;
+    height: 460px;
+    padding: 10px;
+    display: none;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    font: 16px/24px "微软雅黑","宋体" ;
+    color: #fff;
+}
+.ban-l{
+    position: relative;
+    float: left;
+    width: 298px;
+    height: 478px;
+    margin-right: 20px;
+    border: 1px solid #A49175;
+    background-color: #A49175;
+}
+.banTab a{
+    display: block;
+    background-color: #A49175;
+    height: 30px;
+    padding:0 10px;
+    font: 16px/30px "微软雅黑","宋体" ;
+    color: #ccc;
+    cursor: pointer;
+}
+.banTab a:hover{
+    background-color: #6C3D36;
+    color: #fff;
+}
+
+/*主要内容部分*/
+.cont{
+    height: 480px;
+    margin-top: 10px;
+    /*background-color: blue;*/
+}
+.cont-l{
+    position: relative;
+    float: left;
+    width: 298px;
+    height: 478px;
+    margin-right: 20px;
+    border: 1px solid #A49175;
+    background-color: #ddd;
+}
+.cover{
+    position: absolute;
+    bottom: 0;
+    font: 28px/60px "微软雅黑","宋体" ;
+    color: #DDDDDD;
+    text-align: center;
+    /*background-color: rgba(0,0,0,.3);*/
+    background-color: #000;
+    opacity: .3;
+    filter: alpha(opacity=30);
+}
+.cont-l-cover{
+    width: 300px;
+    height: 480px;
+}
+.cont-r-cover{
+    width: 640px;
+    height: 480px;
+}
+.cont-l-t{
+    height: 50px;
+    background-color: #A49175;
+    font: 20px/50px "微软 雅黑","宋体" ;
+    color: #ccc;
+    padding: 0 10px;
+}
+.cont-l-t a{
+    color: #ccc;
+}
+.cont-l-t a:hover{
+    color: #fff;
+}
+.cont-l-b{
+    font: 16px/20px "微软雅黑","宋体" ;
+    color: #333;
+    padding:10px;
+}
+.cont-r{
+    position: relative;
+    float: left;
+    width: 640px;
+    height: 480px;
+    background-color: #003366;
+    overflow: hidden;
+}
+.cont-r img{
+    width: 640px;
+    height: 480px;
+}
+
+
+/*尾部*/
+.footer{
+    background-color: #ddd;
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #A49175;
+    padding: 23px 0 30px 0;
+}
