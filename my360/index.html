@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>潮哥360-安全浏览器</title>
+    <link rel="stylesheet" href="./css/ycopy.css">
+</head>
+<body>
+<div id="fullPage">
+    <div class="section first">
+        <div class="logo"></div>
+        <div class="text">
+            <img src="./images/text_1.png" alt=""/>
+            <img src="./images/text_2.png" alt=""/>
+            <img src="./images/text_3.png" alt=""/>
+            <img src="./images/text_4.png" alt=""/>
+            <img src="./images/text_5.png" alt=""/>
+            <img src="./images/text_6.png" alt=""/>
+            <img src="./images/text_7.png" alt=""/>
+            <img src="./images/text_8.png" alt=""/>
+        </div>
+        <div class="info"></div>
+    </div>
+    <div class="section second">
+        <div class="shield">
+            <img src="images/shield_1.png" alt=""/>
+            <img src="images/shield_2.png" alt=""/>
+            <img src="images/shield_3.png" alt=""/>
+            <img src="images/shield_4.png" alt=""/>
+            <img src="images/shield_5.png" alt=""/>
+            <img src="images/shield_6.png" alt=""/>
+            <img src="images/shield_7.png" alt=""/>
+            <img src="images/shield_8.png" alt=""/>
+            <img src="images/shield_9.png" alt=""/>
+        </div>
+        <div class="info"></div>
+    </div>
+    <div class="section third">
+        <div class="info"></div>
+        <div class="circle"></div>
+        <div class="rocket"></div>
+    </div>
+    <div class="section fourth">
+        <div class="search">
+            <div class="key"></div>
+            <div class="input"></div>
+            <div class="wrap">
+                <div class="result"></div>
+            </div>
+        </div>
+        <div class="info"></div>
+    </div>
+    <div class="section fifth">
+        <div class="info"></div>
+        <div class="broswer">
+            <div class="leftside"></div>
+            <div class="topside"></div>
+            <div class="rightside"></div>
+            <div class="bottomside"></div>
+            <div class="toolbar"></div>
+            <div class="searchBox">
+                <span></span>
+            </div>
+            <div class="line"></div>
+            <div class="extra"></div>
+        </div>
+    </div>
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.fullPage.min.js"></script>
+<script>
+//    $('#fullPage').fullpage({
+//        sectionsColor: ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+//        afterLoad: function (archor, index) {
+//            $('.section').removeClass('current');
+////            $('.section').eq(index - 1).addClass('current');
+//            setTimeout(function () {
+//                $('.section').eq(index - 1).addClass('current');
+//            }, 100);
+//        }
+//    });
+
+    $('#fullPage').fullpage({
+        sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+        afterLoad:function(archor,index) {
+            $('.section').removeClass('current');
+            setTimeout(function () {
+                $('.section').eq(index-1).addClass('current');
+            }, 100);
+        }
+    });
+</script>
+</body>
+</html>
