@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>杨松潮3D切割轮播图</title>
+	<title>杨松潮3D切割轮播图（不兼容IE）</title>
 	<style>
 		body {
 			margin: 0;
@@ -33,11 +33,11 @@
 			top: 0;
 			/*width: 112px;*/
 			width: 20%;
+			/*height: 300px;*/
 			height: 100%;
 			transform-style: preserve-3d;
 			/*设置变换，如时间*/
 			transition: all 1s;
-			/*background-color: pink;*/
 		}
 		li span {
 			position: absolute;
@@ -54,18 +54,19 @@
 		li:nth-child(4){left: 60%;}
 		li:nth-child(5){left: 80%;}
 
-		li span:nth-child(1){background: url(images/carouselfigure-3dcut1.jpg);transform: rotateX(0deg) translateZ(150px);}
-		li span:nth-child(2){background: url(images/carouselfigure-3dcut2.jpg);transform: rotateX(90deg) translateZ(150px);}
-		li span:nth-child(3){background: url(images/carouselfigure-3dcut3.jpg);transform: rotateX(180deg) translateZ(150px);}
-		li span:nth-child(4){background: url(images/carouselfigure-3dcut4.jpg);transform: rotateX(270deg) translateZ(150px);}
+		/*/!*使用CSS方法：（可以不用JS方法，但需要手动输入transform属性的translateZ值）：*!/*/
+		/*li span:nth-child(1){background: url(images/carouselfigure-3dcut1.jpg);transform: rotateX(0deg)   translateZ(296px);}*/
+		/*li span:nth-child(2){background: url(images/carouselfigure-3dcut2.jpg);transform: rotateX(90deg)  translateZ(296px);}*/
+		/*li span:nth-child(3){background: url(images/carouselfigure-3dcut3.jpg);transform: rotateX(180deg) translateZ(296px);}*/
+		/*li span:nth-child(4){background: url(images/carouselfigure-3dcut4.jpg);transform: rotateX(270deg) translateZ(296px);}*/
 
-		/*x：{容器(container)的宽度—背景图片的宽度}*x百分比，超出的部分隐藏。*/
-		/*所以：(112-560)*a=-112可以解得a=25%正数）*/
-		li:nth-child(1) span{background-position: 0% 0;}
-		li:nth-child(2) span{background-position: 25% 0;}
-		li:nth-child(3) span{background-position: 50% 0;}
-		li:nth-child(4) span{background-position: 75% 0;}
-		li:nth-child(5) span{background-position: 100% 0;}
+		/*/!*x：{容器(container)的宽度—背景图片的宽度}*x百分比，超出的部分隐藏。*!/*/
+		/*/!*所以：(112-560)*a=-112可以解得a=25%正数）*!/*/
+		/*li:nth-child(1) span{background-position: 0% 0;}*/
+		/*li:nth-child(2) span{background-position: 25% 0;}*/
+		/*li:nth-child(3) span{background-position: 50% 0;}*/
+		/*li:nth-child(4) span{background-position: 75% 0;}*/
+		/*li:nth-child(5) span{background-position: 100% 0;}*/
 
 		/*按钮*/
 		.prev, .next {
@@ -90,7 +91,7 @@
 	</style>
 </head>
 <body>
-	<div class="view">
+	<div class="view" id="view">
 		<ul>
 			<li>
 				<span></span>
@@ -136,6 +137,29 @@
 			var arrPrev = document.querySelector('.prev');
 			var arrNext = document.querySelector('.next');
 			var lis = document.querySelectorAll('li');
+			var transZ = document.getElementById('view').offsetHeight / 2;
+			console.log(transZ);
+
+			//如果用JS就可以不要之前的CSS设置，此时可以不用手动输入transform属性的translateZ值
+			for (var i = 0; i < lis.length; i++) {
+				var spans = lis[i].children;
+				for (var j = 0; j < spans.length; j++) {
+					this.index = j;
+					spans[this.index].style.backgroundImage = 'url(images/carouselfigure-3dcut' + (this.index+ 1) + '.jpg)';
+					spans[this.index].style.transform = 'rotateX(' + this.index * 90 + 'deg)'+'translateZ(' + transZ + 'px)';
+//					console.log(spans[this.index].style.transform);
+				}
+			}
+			for (var i = 0; i < lis.length; i++) {
+				this.index = i;
+				var spans = lis[this.index].children;
+				for (var j = 0; j < spans.length; j++) {
+					console.log(spans.length);
+					spans[j].style.backgroundPosition = 25 * this.index + '% 0';
+				}
+			}
+
+
 			arrPrev.addEventListener('click', function() {
 				current++;
 				CarouselFigure_3dCut(0.1);
@@ -156,7 +180,7 @@
 		})();
 
 
-		//有引入jQuery时:
+		//有引入jQuery时的左右箭头:
 		// 上一张
 		//		$('.prev').on('click', function () {
 		//			current++;
