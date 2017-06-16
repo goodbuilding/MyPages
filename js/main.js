@@ -54,13 +54,15 @@
     u = 0 === g, i(), g && (c = !0, classie.add(v, "notrans"), classie.add(v, "modify")), window.addEventListener("scroll", r), y.addEventListener("click", function () {
         d("reveal")
     }), $(".element").typed({
-        strings: ["I'm Web Developer", "I'm Web Designer"],
+        //strings: ["I'm Web Developer", "I'm Web Designer"],
+        strings: ["我是 建筑师", "我是 绘图员"],
         typeSpeed: 1,
         backSpeed: 1,
         backDelay: 1e3,
         loop: !0
     }), $(".sub-title").typed({
-        strings: ["Web Developer", "Web Designer"],
+        //strings: ["Web Developer", "Web Designer"],
+        strings: ["杨松潮个人简历网站", "yangsongchao"],
         typeSpeed: 1,
         backSpeed: 1,
         backDelay: 1400,
@@ -88,4 +90,6 @@
             showInfo: !0
         }]
     })
+
+    
 }();
